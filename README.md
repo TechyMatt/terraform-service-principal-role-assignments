@@ -23,4 +23,4 @@ service_principals = {
     }
 ```
 
-This solution assumes that any scopes that are defined already existing the environment.
+This solution assumes that any scopes that are defined already exist in the environment.
