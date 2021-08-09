@@ -17,8 +17,6 @@ locals {
 resource "azuread_application" "local" {
   display_name = var.sp_name
 
-  create_duration = "60s"
-  destroy_duration = "60s"
 }
 
 resource "azuread_service_principal" "local" {
@@ -44,5 +42,5 @@ resource "azurerm_role_assignment" "local" {
 
   scope                = each.value.scope
   role_definition_name = each.value.role
-  principal_id         = azuread_application.local.application_id
+  principal_id         = azuread_service_principal.local.object_id
 }
